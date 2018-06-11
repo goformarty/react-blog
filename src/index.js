@@ -6,31 +6,19 @@ import { BrowserRouter, Route } from 'react-router-dom'
 
 
 import './index.css';
-import App from './App';
 import reducers from './reducers';
+import PostIndex from './components/post_index';
+
 import registerServiceWorker from './registerServiceWorker';
 
+
 const createStoreWithMiddleware = applyMiddleware()(createStore);
-
-class Hello extends React.Component {
-	render() {
-		return <div> Hello </div>
-	}
-}
-
-class Goodbye extends React.Component {
-	render() {
-		return <div> Goodbye </div>
-	}
-}
 
 ReactDOM.render(
 	<Provider store={createStoreWithMiddleware(reducers)}>
 		<BrowserRouter>
 			<div>
-				Header
-				<Route path="/hello" component={ Hello } />
-				<Route path="/goodbye" component= { Goodbye }/>
+				<Route path='/' component={PostIndex} />
 			</div>
 		</BrowserRouter>
 	</Provider>
