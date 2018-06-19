@@ -9,6 +9,7 @@ import promise from 'redux-promise';
 import './index.css';
 import reducers from './reducers';
 import PostIndex from './components/post_index';
+import PostNew from './components/post_new'
 
 import registerServiceWorker from './registerServiceWorker';
 
@@ -20,6 +21,7 @@ ReactDOM.render(
 		<BrowserRouter>
 			<div>
 				<Route path='/' component={PostIndex} />
+				<Route path='/posts/new' component={PostNew} />
 			</div>
 		</BrowserRouter>
 	</Provider>
